@@ -1,10 +1,9 @@
 #!/bin/bash
 
-
 echo "Yükleme hazırlığı yapılıyor."
 sleep 10
 echo "Bağımlılıklar yükleniyor..."
-sudo apt install gcc binutils make -y
+sudo apt install gcc binutils -y
 
 # Kurulumu yap
 echo "Sistem güncelleştirmesi yapılıyor."
