@@ -102,8 +102,17 @@ sudo rm -rf vmware*
 echo "Yeniden başlatmalısın..."
 echo "Settings > Options > Guest Isolation Deaktif et Yeniden başlat> Aktif et Yeniden başlat"
 
-sudo init 6
+read -n 1 -p "Başarılı kurulumun ardından yeniden başlatmalısın.Sistem Yeniden Başlasın mı? Evet (E), Hayır (H)?" sis;
 
+case $sis in
+    e|E)
+		echo "Sistem yeniden başlatılıyor."
+        sudo init 6;;
+    h|H)
+        bash install_vmware_tools.sh;;
+    *)
+        bash install_vmware_tools.sh;;
+esac
 # KOD SONU
 
 
@@ -112,6 +121,8 @@ sudo init 6
 『!』Kurulum Bitti...
 
 "
+
+
 
 sleep 3
 bash install_vmware_tools.sh
